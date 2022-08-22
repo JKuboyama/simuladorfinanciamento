@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de financiamento - POO</title>
+    <link rel="stylesheet" href="./simulador-financiamento.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h2 id="titulo">
+        Simulador de Financiamento com Sistema de Amortização Constante (SAC)
+      </h2>
+      <label for="textoValor"
+        >R$<input id="textoValor" type="text" placeholder="Valor requerido"
+      /></label>
+      <label for="textoEntrada"
+        >R$<input id="textoEntrada" type="text" placeholder="Valor de entrada"
+      /></label>
+      <label for="textoTaxaJuros"
+        ><input id="textoTaxaJuros" type="text" placeholder="Taxa de juros" />
+        <b>%</b></label
+      >
+      <label for="textoPrazo"
+        ><input id="textoPrazo" type="text" placeholder="Prazo" />meses</label
+      >
+      <button id="botaoCalcular">Calcular</button>
+      <label for="comCarencia"
+        ><input id="comCarencia" type="checkbox" /> Financiamento com
+        carência</label
+      >
+      <select id="listaSuspensa" hidden>
+        <option value="2">2 meses</option>
+        <option value="3">3 meses</option>
+        <option value="4">4 meses</option>
+      </select>
+      <p></p>
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Valor da Parcela</th>
+            <th>Amortização</th>
+            <th>Juros</th>
+            <th>Saldo Devedor</th>
+          </tr>
+        </thead>
+        <tbody id="corpoTabela"></tbody>
+      </table>
+    </div>
+
+    <script type="module" src="./simulador-financiamento.js"></script>
+  </body>
+</html>
