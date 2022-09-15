@@ -7,7 +7,6 @@ export class Financiamento {
   constructor(valor, entrada, taxaJuros, prazo) {
     this.#taxaJuros = taxaJuros
     this.#prazo = prazo
-    //composição - financiamento possui ou tem parcelas
     this.#parcelas.push(new Parcela(0, 0, 0, 0, valor - entrada)) //aqui faremos 1 parcela a mais pq a primeira vai ser só pra chamar o saldo devedor logo no início
   }
 
@@ -17,11 +16,9 @@ export class Financiamento {
 
   calcParcelasMensais() {
     let saldo = this.#parcelas[this.#parcelas.length - 1].getSaldo()
-    //vai pegar sempre a última parcela
-
+    
     let prazo = this.#prazo - (this.#parcelas.length - 1)
-    //para ir sempre diminuindo as parcelas em 1
-
+    
     let amortizacao = saldo / prazo
 
     for (let i = 0; i < prazo; i++) {
@@ -37,13 +34,12 @@ export class Financiamento {
   }
 
   exibeParcelas() {
-    const parcelas = this.#parcelas.slice(1) //vai pegar as parcelas a partir da posição 1 (a posição 0 não vem)
+    const parcelas = this.#parcelas.slice(1)
     for (const parcela of parcelas) {
-      const linhaTabela = corpoTabela.insertRow(-1) //-1 indica que é no final
+      const linhaTabela = corpoTabela.insertRow(-1)
       for (const dado of parcela.getDadosFormatados()) {
         const celulaTabela = linhaTabela.insertCell(-1)
         celulaTabela.textContent = dado
-        //isso fará com que cada dados.push do método getDadosFormatados vá sendo adicionado na tabela nos lugares certos
       }
     }
   }
