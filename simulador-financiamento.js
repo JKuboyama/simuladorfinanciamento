@@ -1,7 +1,7 @@
 import { Financiamento } from './financiamento.js'
 import { FinanciamentoCarencia } from './comcarencia.js'
 
-const comCarencia = document.querySelector('#comCarencia') //toda vez que a gente seleciona e salva algo dentro de uma variável, vira um objeto
+const comCarencia = document.querySelector('#comCarencia')
 const listaSuspensa = document.querySelector('#listaSuspensa')
 const corpoTabela = document.querySelector('#corpoTabela')
 const botaoCalcular = document.querySelector('#botaoCalcular')
@@ -20,7 +20,7 @@ comCarencia.addEventListener('change', function () {
   if (this.checked) {
     listaSuspensa.removeAttribute('hidden')
   } else {
-    listaSuspensa.setAttribute('hidden', 'hidden') //('tipo', 'valor')
+    listaSuspensa.setAttribute('hidden', 'hidden')
   }
 })
 
