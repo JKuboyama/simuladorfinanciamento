@@ -7,7 +7,7 @@ export class Financiamento {
   constructor(valor, entrada, taxaJuros, prazo) {
     this.#taxaJuros = taxaJuros
     this.#prazo = prazo
-    this.#parcelas.push(new Parcela(0, 0, 0, 0, valor - entrada)) //aqui faremos 1 parcela a mais pq a primeira vai ser só pra chamar o saldo devedor logo no início
+    this.#parcelas.push(new Parcela(0, 0, 0, 0, valor - entrada))
   }
 
   static calcJuros(valor, taxaJuros) {
